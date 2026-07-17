@@ -1,0 +1,221 @@
+version: "3.9"
+
+services:
+
+  # =====================================================================================
+  # RabbitMQ
+  #
+  # Broker de mensageria utilizado para comunicação assíncrona entre microsserviços.
+  #
+  # AMQP:      localhost:5672
+  # Management: http://localhost:15672
+  # =====================================================================================
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    hostname: rabbitmq
+
+    # Reinicia automaticamente caso o container pare inesperadamente.
+    restart: unless-stopped
+
+    ports:
+      # Porta utilizada pelas aplicações (.NET, Java, etc.)
+      - "5672:5672"
+
+      # Interface Web de administração
+      - "15672:15672"
+
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
+
+    # Persistência das filas e configurações
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+
+    # Verifica se o RabbitMQ realmente terminou de iniciar.
+    # Muito útil quando outros containers dependem dele.
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "check_running"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+    networks:
+      - backend
+
+  # =====================================================================================
+  # SQL Server
+  #
+  # Banco relacional utilizado nas aplicações .NET.
+  # Ideal para Entity Framework Core ou Dapper.
+  # =====================================================================================
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver
+    hostname: sqlserver
+
+    restart: unless-stopped
+
+    ports:
+      - "1433:1433"
+
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: ${SQL_PASSWORD}
+
+    # Mantém os bancos mesmo após remover o container.
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+
+    # OBS:
+    # Dependendo da imagem do SQL Server, o comando "sqlcmd"
+    # pode não existir no PATH.
+    # Caso o container fique como "unhealthy",
+    # provavelmente será necessário ajustar este comando.
+    healthcheck:
+      test: ["CMD", "sqlcmd", "-S", "localhost", "-U", "sa", "-P", "${SQL_PASSWORD}", "-Q", "SELECT 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+    networks:
+      - backend
+
+  # =====================================================================================
+  # PostgreSQL
+  #
+  # Outro banco relacional muito utilizado em aplicações cloud.
+  # =====================================================================================
+  postgres:
+    image: postgres:17
+    container_name: postgres
+    hostname: postgres
+
+    restart: unless-stopped
+
+    ports:
+      - "5432:5432"
+
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "${POSTGRES_USER}", "-d", "${POSTGRES_DB}"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+    networks:
+      - backend
+
+  # =====================================================================================
+  # MongoDB
+  #
+  # Banco NoSQL orientado a documentos.
+  #
+  # Ideal para:
+  # - Catálogos
+  # - Logs
+  # - Auditoria
+  # - Eventos
+  # =====================================================================================
+  mongo:
+    image: mongo:8
+    container_name: mongo
+    hostname: mongo
+
+    restart: unless-stopped
+
+    ports:
+      - "27017:27017"
+
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+
+    volumes:
+      - mongo_data:/data/db
+
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+    networks:
+      - backend
+
+  # =====================================================================================
+  # Redis
+  #
+  # Banco Key-Value em memória.
+  #
+  # Muito utilizado para:
+  # - Cache
+  # - Sessão
+  # - Rate Limiting
+  # - Pub/Sub
+  # =====================================================================================
+  redis:
+    image: redis:8
+    container_name: redis
+    hostname: redis
+
+    restart: unless-stopped
+
+    ports:
+      - "6379:6379"
+
+    # Persistência opcional.
+    # Para estudos é interessante manter habilitada.
+    volumes:
+      - redis_data:/data
+
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+    networks:
+      - backend
+
+# =========================================================================================
+# Volumes
+#
+# Garantem persistência dos dados.
+# Mesmo removendo o container, os dados permanecem.
+#
+# Remover:
+# docker compose down -v
+# =========================================================================================
+volumes:
+  rabbitmq_data:
+  sqlserver_data:
+  postgres_data:
+  mongo_data:
+  redis_data:
+
+# =========================================================================================
+# Rede interna do Docker.
+#
+# Todos os containers conseguem conversar entre si
+# utilizando o hostname definido.
+#
+# Exemplo:
+#
+# Server=sqlserver
+# Host=postgres
+# Host=rabbitmq
+# Host=mongo
+# Host=redis
+# =========================================================================================
+networks:
+  backend:
+    driver: bridge
