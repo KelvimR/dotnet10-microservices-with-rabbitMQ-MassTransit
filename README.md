@@ -1,5 +1,8 @@
 # .NET Lab Infrastructure
 
+![CI](https://github.com/SEU_USUARIO/SEU_REPOSITORIO/actions/workflows/ci.yml/badge.svg)
+![CodeQL](https://github.com/SEU_USUARIO/SEU_REPOSITORIO/actions/workflows/codeql.yml/badge.svg)
+
 Infraestrutura Docker utilizada para estudos de desenvolvimento backend com **.NET**, **RabbitMQ**, **SQL Server**, **PostgreSQL**, **MongoDB** e **Redis**.
 
 O objetivo deste projeto é fornecer um ambiente de desenvolvimento completo para praticar APIs, microsserviços, mensageria, cache, bancos relacionais e NoSQL sem instalar essas ferramentas diretamente na máquina.
