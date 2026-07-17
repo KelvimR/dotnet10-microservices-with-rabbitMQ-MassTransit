@@ -4,16 +4,19 @@ on:
   push:
     branches:
       - main
+
   pull_request:
     branches:
       - main
+
   schedule:
     - cron: '0 2 * * 1'
 
 jobs:
   analyze:
-    name: analyze
+    name: Analyze C#
     runs-on: ubuntu-latest
+
     permissions:
       actions: read
       contents: read
@@ -23,8 +26,8 @@ jobs:
       fail-fast: false
       matrix:
         language:
-            - csharp
-    
+          - csharp
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -32,8 +35,8 @@ jobs:
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
-            language:${{ matrix.language }}
-    
+          languages: ${{ matrix.language }}
+
       - name: Autobuild
         uses: github/codeql-action/autobuild@v3
 

@@ -1,11 +1,11 @@
 name: Continuous Integration
 
-on: 
+on:
   push:
     branches:
       - main
       - develop
-  
+
   pull_request:
     branches:
       - main
@@ -15,22 +15,21 @@ jobs:
   build:
     name: Build and Test
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-    
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '10.x'
 
       - name: Restore dependencies
-        run: dotnet restore dotnet10-microservices-with-rabbitMQ-MassTransit\AirlineBookingSystem\AirlineBookingSystem.slnx
+        run: dotnet restore dotnet10-microservices-with-rabbitMQ-MassTransit/AirlineBookingSystem/AirlineBookingSystem.slnx
 
       - name: Build solution
-        run: dotnet build dotnet10-microservices-with-rabbitMQ-MassTransit\AirlineBookingSystem\AirlineBookingSystem.slnx --configuration Release --no-restore
+        run: dotnet build dotnet10-microservices-with-rabbitMQ-MassTransit/AirlineBookingSystem/AirlineBookingSystem.slnx --configuration Release --no-restore
 
       - name: Run tests
-        run: dotnet test dotnet10-microservices-with-rabbitMQ-MassTransit\AirlineBookingSystem\AirlineBookingSystem.slnx --configuration Release
-      
-      
+        run: dotnet test dotnet10-microservices-with-rabbitMQ-MassTransit/AirlineBookingSystem/AirlineBookingSystem.slnx --configuration Release --no-build
