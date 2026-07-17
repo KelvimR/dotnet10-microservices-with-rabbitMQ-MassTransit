@@ -19,6 +19,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      
+      - name: List repository files
+        run: |
+          pwd
+          ls -la
+          find . -name "*.sln*" -o -name "*.csproj"
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
