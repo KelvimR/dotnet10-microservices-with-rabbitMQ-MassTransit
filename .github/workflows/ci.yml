@@ -32,10 +32,10 @@ jobs:
           dotnet-version: '10.x'
 
       - name: Restore dependencies
-        run: dotnet restore dotnet10-microservices-with-rabbitMQ-MassTransit/AirlineBookingSystem/AirlineBookingSystem.slnx
+        run: dotnet restore AirlineBookingSystem/AirlineBookingSystem.slnx
 
       - name: Build solution
-        run: dotnet build dotnet10-microservices-with-rabbitMQ-MassTransit/AirlineBookingSystem/AirlineBookingSystem.slnx --configuration Release --no-restore
+        run: dotnet build AirlineBookingSystem/AirlineBookingSystem.slnx --configuration Release --no-restore
 
       - name: Run tests
-        run: dotnet test dotnet10-microservices-with-rabbitMQ-MassTransit/AirlineBookingSystem/AirlineBookingSystem.slnx --configuration Release --no-build
+        run: dotnet test AirlineBookingSystem/AirlineBookingSystem.slnx --configuration Release --no-build
