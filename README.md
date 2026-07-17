@@ -1,7 +1,7 @@
 # .NET Lab Infrastructure
 
-![CI](https://github.com/SEU_USUARIO/SEU_REPOSITORIO/actions/workflows/ci.yml/badge.svg)
-![CodeQL](https://github.com/SEU_USUARIO/SEU_REPOSITORIO/actions/workflows/codeql.yml/badge.svg)
+![CI](https://github.com/KelvimR/dotnet10-microservices-with-rabbitMQ-MassTransit/actions/workflows/ci.yml/badge.svg)
+![CodeQL](https://github.com/KelvimR/dotnet10-microservices-with-rabbitMQ-MassTransit/actions/workflows/codeql.yml/badge.svg)
 
 Infraestrutura Docker utilizada para estudos de desenvolvimento backend com **.NET**, **RabbitMQ**, **SQL Server**, **PostgreSQL**, **MongoDB** e **Redis**.
 
