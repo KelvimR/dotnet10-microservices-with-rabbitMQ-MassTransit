@@ -1,41 +1,31 @@
 ﻿using AirlineBookingSystem.Flights.Core.Entities;
 using AirlineBookingSystem.Flights.Core.Repositories;
-using Dapper;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Security.AccessControl;
-using System.Text;
+using AirlineBookingSystem.Flights.Infrastructure.Data;
+using MongoDB.Driver;
 
 namespace AirlineBookingSystem.Flights.Infrastructure.Repositories;
 
 public class FlightRepository : IFlightRepository
 {
-    private readonly IDbConnection _dbConnection;
+    private readonly IFlightContext _context;
 
-    public FlightRepository(IDbConnection dbConnection)
+    public FlightRepository(IFlightContext context)
     {
-        _dbConnection = dbConnection;
+        _context = context;
     }
 
     public async Task AddFlightAsync(Flight flight)
     {
-        const string sql = @"
-            INSERT INTO Flights (Id, FlightNumber, Origin, Destination, DepartureTime, ArrivalTime)
-            VALUES (@Id, @FlightNumber, @Origin, @Destination, @DepartureTime, @ArrivalTime)";
-
-        await _dbConnection.ExecuteAsync(sql, flight);
+        await _context.Flights.InsertOneAsync(flight);
     }
 
     public async Task DeleteFlightAsync(Guid id)
     {
-        const string sql = "DELETE FROM Flights WHERE Id = @Id";
-        await _dbConnection.ExecuteAsync(sql, new { Id = id});
+        await _context.Flights.DeleteOneAsync(f => f.Id == id);
     }
 
     public async Task<IEnumerable<Flight>> GetFlightAsync()
     {
-        const string sql = "SELECT * FROM Flights";
-        return await _dbConnection.QueryAsync<Flight>(sql);
+        return await _context.Flights.Find(flight => true).ToListAsync(); 
     }
 }

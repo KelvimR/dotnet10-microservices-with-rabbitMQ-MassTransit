@@ -1,5 +1,6 @@
 using AirlineBookingSystem.Flights.Application.Handlers;
 using AirlineBookingSystem.Flights.Core.Repositories;
+using AirlineBookingSystem.Flights.Infrastructure.Data;
 using AirlineBookingSystem.Flights.Infrastructure.Repositories;
 using Microsoft.Data.SqlClient;
 using System.Data;
@@ -19,10 +20,7 @@ var assemblies = new Assembly[]
     typeof(GetAllFlightshandler).Assembly,
 };
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(assemblies));
-
-//Add sql connection
-builder.Services.AddScoped<IDbConnection>(sp =>
-    new SqlConnection(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<IFlightContext, FlightContext>();
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi

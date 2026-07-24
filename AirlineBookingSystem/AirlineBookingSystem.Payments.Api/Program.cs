@@ -1,6 +1,10 @@
+using AirlineBookingSystem.BuildingBlocks.Common;
+using AirlineBookingSystem.BuildingBlocks.Contracts.EventBus.Messages;
+using AirlineBookingSystem.Payments.Application.Consumers;
 using AirlineBookingSystem.Payments.Application.Handlers;
 using AirlineBookingSystem.Payments.Core.Repositories;
 using AirlineBookingSystem.Payments_.Infrastructure.Repositories;
+using MassTransit;
 using System.Data;
 using System.Data.SqlClient;
 using System.Reflection;
@@ -13,6 +17,29 @@ public partial class Program
 
         // Add services to the container.
         builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
+
+        //MassTransit
+        builder.Services.AddMassTransit(config =>
+        {
+            //Mark this as consumer
+            config.AddConsumer<FlightBookedConsumer>();
+
+            config.UsingRabbitMq((ct, cfg) =>
+            {
+                //cfg.Host(builder.Configuration["EventBusSettings:HostAddress"]);
+                cfg.Host(builder.Configuration["EventBusSettings:Host"], "/", h =>
+                {
+                    h.Username(builder.Configuration["EventBusSettings:Username"]);
+                    h.Password(builder.Configuration["EventBusSettings:Password"]);
+                });
+
+                cfg.ReceiveEndpoint(EventBusConstant.FlightBookedQueue, c =>
+                {
+                    c.ConfigureConsumer<FlightBookedConsumer>(ct);
+                });
+
+            });
+        });
 
         //Register MediatR
         var assemblies = new Assembly[]

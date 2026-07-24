@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "C:\\TEMP\\dotnet10-microservices-with-rabbitMQ-MassTransit\\AirlineBookingSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{914D0895-58B7-82EA-48E2-06893DD7F793}|AirlineBookingSystem.Bookings.Api\\AirlineBookingSystem.Bookings.Api.csproj|c:\\temp\\dotnet10-microservices-with-rabbitmq-masstransit\\airlinebookingsystem\\airlinebookingsystem.bookings.api\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{914D0895-58B7-82EA-48E2-06893DD7F793}|AirlineBookingSystem.Bookings.Api\\AirlineBookingSystem.Bookings.Api.csproj|solutionrelative:airlinebookingsystem.bookings.api\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AF0FA911-AD30-0E1F-C0E8-4EBFC93F48C5}|AirlineBookingSystem.Flights.Infrastructure\\AirlineBookingSystem.Flights.Infrastructure.csproj|c:\\temp\\dotnet10-microservices-with-rabbitmq-masstransit\\airlinebookingsystem\\airlinebookingsystem.flights.infrastructure\\repositories\\flightrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF0FA911-AD30-0E1F-C0E8-4EBFC93F48C5}|AirlineBookingSystem.Flights.Infrastructure\\AirlineBookingSystem.Flights.Infrastructure.csproj|solutionrelative:airlinebookingsystem.flights.infrastructure\\repositories\\flightrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5CF5BFCD-2351-0969-AA34-00A015C5E126}|AirlineBookingSystem.Notification.Api\\AirlineBookingSystem.Notifications.Api.csproj|c:\\temp\\dotnet10-microservices-with-rabbitmq-masstransit\\airlinebookingsystem\\airlinebookingsystem.notification.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5CF5BFCD-2351-0969-AA34-00A015C5E126}|AirlineBookingSystem.Notification.Api\\AirlineBookingSystem.Notifications.Api.csproj|solutionrelative:airlinebookingsystem.notification.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AF0FA911-AD30-0E1F-C0E8-4EBFC93F48C5}|AirlineBookingSystem.Flights.Infrastructure\\AirlineBookingSystem.Flights.Infrastructure.csproj|c:\\temp\\dotnet10-microservices-with-rabbitmq-masstransit\\airlinebookingsystem\\airlinebookingsystem.flights.infrastructure\\data\\iflightcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF0FA911-AD30-0E1F-C0E8-4EBFC93F48C5}|AirlineBookingSystem.Flights.Infrastructure\\AirlineBookingSystem.Flights.Infrastructure.csproj|solutionrelative:airlinebookingsystem.flights.infrastructure\\data\\iflightcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17ED08D9-045E-78B2-0682-D14DC5502626}|AirlineBookingSystem.Flight.Api\\AirlineBookingSystem.Flights.Api.csproj|c:\\temp\\dotnet10-microservices-with-rabbitmq-masstransit\\airlinebookingsystem\\airlinebookingsystem.flight.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{17ED08D9-045E-78B2-0682-D14DC5502626}|AirlineBookingSystem.Flight.Api\\AirlineBookingSystem.Flights.Api.csproj|solutionrelative:airlinebookingsystem.flight.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{914D0895-58B7-82EA-48E2-06893DD7F793}|AirlineBookingSystem.Bookings.Api\\AirlineBookingSystem.Bookings.Api.csproj|c:\\temp\\dotnet10-microservices-with-rabbitmq-masstransit\\airlinebookingsystem\\airlinebookingsystem.bookings.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{914D0895-58B7-82EA-48E2-06893DD7F793}|AirlineBookingSystem.Bookings.Api\\AirlineBookingSystem.Bookings.Api.csproj|solutionrelative:airlinebookingsystem.bookings.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC6C9F27-8482-0027-644C-2FD38FA04571}|AirlineBookingSystem.Payments.Api\\AirlineBookingSystem.Payments.Api.csproj|c:\\temp\\dotnet10-microservices-with-rabbitmq-masstransit\\airlinebookingsystem\\airlinebookingsystem.payments.api\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC6C9F27-8482-0027-644C-2FD38FA04571}|AirlineBookingSystem.Payments.Api\\AirlineBookingSystem.Payments.Api.csproj|solutionrelative:airlinebookingsystem.payments.api\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AF0FA911-AD30-0E1F-C0E8-4EBFC93F48C5}|AirlineBookingSystem.Flights.Infrastructure\\AirlineBookingSystem.Flights.Infrastructure.csproj|c:\\temp\\dotnet10-microservices-with-rabbitmq-masstransit\\airlinebookingsystem\\airlinebookingsystem.flights.infrastructure\\data\\flightcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF0FA911-AD30-0E1F-C0E8-4EBFC93F48C5}|AirlineBookingSystem.Flights.Infrastructure\\AirlineBookingSystem.Flights.Infrastructure.csproj|solutionrelative:airlinebookingsystem.flights.infrastructure\\data\\flightcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,66 +39,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "BookingController.cs",
-              "DocumentMoniker": "C:\\TEMP\\dotnet10-microservices-with-rabbitMQ-MassTransit\\AirlineBookingSystem\\AirlineBookingSystem.Bookings.Api\\Controllers\\BookingController.cs",
-              "RelativeDocumentMoniker": "AirlineBookingSystem.Bookings.Api\\Controllers\\BookingController.cs",
-              "ToolTip": "C:\\TEMP\\dotnet10-microservices-with-rabbitMQ-MassTransit\\AirlineBookingSystem\\AirlineBookingSystem.Bookings.Api\\Controllers\\BookingController.cs",
-              "RelativeToolTip": "AirlineBookingSystem.Bookings.Api\\Controllers\\BookingController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAPAAAAAAAAAA==",
+              "Title": "FlightRepository.cs",
+              "DocumentMoniker": "C:\\TEMP\\dotnet10-microservices-with-rabbitMQ-MassTransit\\AirlineBookingSystem\\AirlineBookingSystem.Flights.Infrastructure\\Repositories\\FlightRepository.cs",
+              "RelativeDocumentMoniker": "AirlineBookingSystem.Flights.Infrastructure\\Repositories\\FlightRepository.cs",
+              "ToolTip": "C:\\TEMP\\dotnet10-microservices-with-rabbitMQ-MassTransit\\AirlineBookingSystem\\AirlineBookingSystem.Flights.Infrastructure\\Repositories\\FlightRepository.cs",
+              "RelativeToolTip": "AirlineBookingSystem.Flights.Infrastructure\\Repositories\\FlightRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-24T00:56:46.172Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\TEMP\\dotnet10-microservices-with-rabbitMQ-MassTransit\\AirlineBookingSystem\\AirlineBookingSystem.Notification.Api\\Program.cs",
-              "RelativeDocumentMoniker": "AirlineBookingSystem.Notification.Api\\Program.cs",
-              "ToolTip": "C:\\TEMP\\dotnet10-microservices-with-rabbitMQ-MassTransit\\AirlineBookingSystem\\AirlineBookingSystem.Notification.Api\\Program.cs",
-              "RelativeToolTip": "AirlineBookingSystem.Notification.Api\\Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-24T00:53:26.448Z",
+              "WhenOpened": "2026-07-24T19:01:16.84Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\TEMP\\dotnet10-microservices-with-rabbitMQ-MassTransit\\AirlineBookingSystem\\AirlineBookingSystem.Flight.Api\\Program.cs",
-              "RelativeDocumentMoniker": "AirlineBookingSystem.Flight.Api\\Program.cs",
-              "ToolTip": "C:\\TEMP\\dotnet10-microservices-with-rabbitMQ-MassTransit\\AirlineBookingSystem\\AirlineBookingSystem.Flight.Api\\Program.cs",
-              "RelativeToolTip": "AirlineBookingSystem.Flight.Api\\Program.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "FlightContext.cs",
+              "DocumentMoniker": "C:\\TEMP\\dotnet10-microservices-with-rabbitMQ-MassTransit\\AirlineBookingSystem\\AirlineBookingSystem.Flights.Infrastructure\\Data\\FlightContext.cs",
+              "RelativeDocumentMoniker": "AirlineBookingSystem.Flights.Infrastructure\\Data\\FlightContext.cs",
+              "ToolTip": "C:\\TEMP\\dotnet10-microservices-with-rabbitMQ-MassTransit\\AirlineBookingSystem\\AirlineBookingSystem.Flights.Infrastructure\\Data\\FlightContext.cs",
+              "RelativeToolTip": "AirlineBookingSystem.Flights.Infrastructure\\Data\\FlightContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-24T00:53:19.072Z",
+              "WhenOpened": "2026-07-24T18:55:30.574Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\TEMP\\dotnet10-microservices-with-rabbitMQ-MassTransit\\AirlineBookingSystem\\AirlineBookingSystem.Bookings.Api\\Program.cs",
-              "RelativeDocumentMoniker": "AirlineBookingSystem.Bookings.Api\\Program.cs",
-              "ToolTip": "C:\\TEMP\\dotnet10-microservices-with-rabbitMQ-MassTransit\\AirlineBookingSystem\\AirlineBookingSystem.Bookings.Api\\Program.cs",
-              "RelativeToolTip": "AirlineBookingSystem.Bookings.Api\\Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "IFlightContext.cs",
+              "DocumentMoniker": "C:\\TEMP\\dotnet10-microservices-with-rabbitMQ-MassTransit\\AirlineBookingSystem\\AirlineBookingSystem.Flights.Infrastructure\\Data\\IFlightContext.cs",
+              "RelativeDocumentMoniker": "AirlineBookingSystem.Flights.Infrastructure\\Data\\IFlightContext.cs",
+              "ToolTip": "C:\\TEMP\\dotnet10-microservices-with-rabbitMQ-MassTransit\\AirlineBookingSystem\\AirlineBookingSystem.Flights.Infrastructure\\Data\\IFlightContext.cs",
+              "RelativeToolTip": "AirlineBookingSystem.Flights.Infrastructure\\Data\\IFlightContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-24T00:46:20.688Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PaymentController.cs",
-              "DocumentMoniker": "C:\\TEMP\\dotnet10-microservices-with-rabbitMQ-MassTransit\\AirlineBookingSystem\\AirlineBookingSystem.Payments.Api\\Controllers\\PaymentController.cs",
-              "RelativeDocumentMoniker": "AirlineBookingSystem.Payments.Api\\Controllers\\PaymentController.cs",
-              "ToolTip": "C:\\TEMP\\dotnet10-microservices-with-rabbitMQ-MassTransit\\AirlineBookingSystem\\AirlineBookingSystem.Payments.Api\\Controllers\\PaymentController.cs",
-              "RelativeToolTip": "AirlineBookingSystem.Payments.Api\\Controllers\\PaymentController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-24T00:16:04.41Z",
+              "WhenOpened": "2026-07-24T18:54:34.253Z",
               "EditorCaption": ""
             }
           ]

@@ -1,7 +1,7 @@
 <Solution>
-  <Folder Name="/BuildingBlocks/" />
-  <Folder Name="/BuildingBlocks/Common/" />
-  <Folder Name="/BuildingBlocks/Contract/" />
+  <Folder Name="/BuildingBlocks/">
+    <Project Path="AirlineBookingSystem.BuildingBlocks/AirlineBookingSystem.BuildingBlocks.csproj" Id="0a072327-cd83-466b-9cd9-7c6ca0b07848" />
+  </Folder>
   <Folder Name="/Services/" />
   <Folder Name="/Services/Booking/">
     <Project Path="AirlineBookingSystem.Bookings.Api/AirlineBookingSystem.Bookings.Api.csproj" />

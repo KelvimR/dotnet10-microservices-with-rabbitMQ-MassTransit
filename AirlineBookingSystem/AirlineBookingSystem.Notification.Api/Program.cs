@@ -1,10 +1,13 @@
+using AirlineBookingSystem.BuildingBlocks.Common;
+using AirlineBookingSystem.Notifications.Application.Consumers;
 using AirlineBookingSystem.Notifications.Application.Handlers;
 using AirlineBookingSystem.Notifications.Application.Interfaces;
 using AirlineBookingSystem.Notifications.Application.Services;
 using AirlineBookingSystem.Notifications.Core.Repositories;
 using AirlineBookingSystem.Notifications.Infrastructure.Repositories;
+using MassTransit;
 using System.Data;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +15,27 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddScoped<INotificationService, NotificationService>();
 builder.Services.AddScoped<INotificationRepository, NotificationRepository>();
+
+//MassTransit
+builder.Services.AddMassTransit(config =>
+{
+    //Mark this as consumer
+    config.AddConsumer<PaymentProcessedConsumer>();
+    
+    config.UsingRabbitMq((context, cfg) =>
+    {
+        cfg.Host(builder.Configuration["EventBusSettings:Host"], "/", h =>
+        {
+            h.Username(builder.Configuration["EventBusSettings:Username"]);
+            h.Password(builder.Configuration["EventBusSettings:Password"]);
+        });
+
+        cfg.ReceiveEndpoint(EventBusConstant.PaymentProcessedQueue, e =>
+        {
+            e.ConfigureConsumer<PaymentProcessedConsumer>(context);
+        });
+    });
+});
 
 //Register MediatR
 var assemblies = new Assembly[]
