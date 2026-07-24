@@ -1,0 +1,23 @@
+[
+  {
+    "Name": "Novo Perfil",
+    "Projects": [
+      {
+        "Path": "AirlineBookingSystem.Bookings.Api\\AirlineBookingSystem.Bookings.Api.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "AirlineBookingSystem.Flight.Api\\AirlineBookingSystem.Flights.Api.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "AirlineBookingSystem.Notification.Api\\AirlineBookingSystem.Notifications.Api.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "AirlineBookingSystem.Payments.Api\\AirlineBookingSystem.Payments.Api.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
